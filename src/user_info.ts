@@ -101,11 +101,11 @@ export class UserInfo {
     const durationDays = Math.floor(
       durationTime / (1000 * 60 * 60 * 24) / 100,
     );
-    const ancientAccount = new Date(earliestRepoDate).getFullYear() <= 2010
+    const ogAccount = new Date(earliestRepoDate).getFullYear() <= 2008 ? 1 : 0;
+    const ancientAccount = new Date(earliestRepoDate).getFullYear() <= 2010 && !ogAccount
       ? 1
       : 0;
     const joined2020 = new Date(earliestRepoDate).getFullYear() == 2020 ? 1 : 0;
-    const ogAccount = new Date(earliestRepoDate).getFullYear() <= 2008 ? 1 : 0;
 
     this.totalCommits = totalCommits;
     this.totalFollowers = userActivity.followers.totalCount;
