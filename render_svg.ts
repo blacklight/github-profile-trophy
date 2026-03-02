@@ -38,7 +38,7 @@ async function main() {
 
   const panelSize = 115;
   const maxRow = 10;
-  const maxColumn = -1; // auto
+  const maxColumn = parseInt(Deno.args[3] ?? "-1"); // -1 = auto (single row)
   const marginWidth = 10;
   const marginHeight = 10;
   const noBackground = false;
